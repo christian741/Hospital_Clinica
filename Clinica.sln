@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Clinica", "Clinica\", "{A1D4276C-41E8-4C22-92DA-3FD414CA3255}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56382"
+		Debug.AspNetCompiler.PhysicalPath = "Clinica\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56382\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56382"
+		Release.AspNetCompiler.PhysicalPath = "Clinica\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56382\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56382"
+		SlnRelativePath = "Clinica\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1D4276C-41E8-4C22-92DA-3FD414CA3255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D4276C-41E8-4C22-92DA-3FD414CA3255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2624E456-BB60-42D4-BA36-00CA06622C8F}
+	EndGlobalSection
+EndGlobal
