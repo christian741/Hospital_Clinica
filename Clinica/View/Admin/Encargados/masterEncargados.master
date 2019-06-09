@@ -1,6 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" 
-    CodeFile="~/Controller/ConPrincipal/MasterPrincipal.master.cs"
-    Inherits="View_Principal_MasterPrincipal" %>
+﻿<%@ Master Language="VB" CodeFile="masterEncargados.master.vb" Inherits="View_Admin_Encargados_masterEncargados" %>
 
 <!DOCTYPE html>
 
@@ -8,17 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-      <!-- CSS Bootstrap & Custom -->
-    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-   
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-      
-      
-    
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
@@ -26,7 +17,5 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
-  
-
 </body>
 </html>
