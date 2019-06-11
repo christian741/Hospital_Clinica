@@ -6,18 +6,28 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-      <!-- CSS Bootstrap & Custom -->
+    <!-- CSS Bootstrap & Custom -->
     <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-   
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-      
-      
+
+    <asp:HyperLink ID="HPL_index" runat="server" NavigateUrl="~/View/Principal/index.aspx">HOME</asp:HyperLink>
+    <asp:HyperLink ID="HPL_nosotros" runat="server" NavigateUrl="~/View/Principal/nosotros.aspx">NOSOTROS</asp:HyperLink>
+    <asp:HyperLink ID="HPL_contactenos" runat="server" NavigateUrl="~/View/Principal/contactenos.aspx">CONTACTENOS</asp:HyperLink>
+    <asp:HyperLink ID="HPL_eventos" runat="server" NavigateUrl="~/View/Principal/eventos.aspx">EVENTOS</asp:HyperLink>
+    <asp:HyperLink ID="HPL_galeria" runat="server" NavigateUrl="~/View/Principal/galeria.aspx">GALERIA</asp:HyperLink>
+    <asp:HyperLink ID="HPL_informacion" runat="server" NavigateUrl="~/View/Principal/informacion.aspx">INFORMACIÒN</asp:HyperLink>
+    <asp:HyperLink ID="HPL_registro" runat="server" NavigateUrl="~/View/Principal/registro.aspx">REGISTRO</asp:HyperLink>
+    <asp:HyperLink ID="HPL_login" runat="server" NavigateUrl="~/View/Principal/login.aspx">LOGIN</asp:HyperLink>
     
     <form id="form1" runat="server">
     <div>

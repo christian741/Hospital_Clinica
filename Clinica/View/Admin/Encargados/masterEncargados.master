@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" CodeFile="masterEncargados.master.vb" Inherits="View_Admin_Encargados_masterEncargados" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="masterEncargados.master.cs" Inherits="View_Admin_Encargados_masterEncargados" %>
 
 <!DOCTYPE html>
 

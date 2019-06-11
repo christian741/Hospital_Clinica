@@ -5,16 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class View_Principal_Default : System.Web.UI.Page
+public partial class View_Admin_masterAdmin : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-
-    protected void but_registrar_Click(object sender, EventArgs e)
-    {
-       
-    }
-
 }

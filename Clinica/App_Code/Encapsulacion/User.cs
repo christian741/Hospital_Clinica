@@ -9,20 +9,50 @@ using System.Web;
 /// <remarks>
 /// Esta Clase permite add, edit, read, y Block
 /// </remarks>
-public abstract class User : Cruds_user
+public  class User 
 {
-    
+    private long id_user;
+    private String primer_nombre;
+    private String segundo_nombre;
+    private String primer_apellido;
+    private String segundo_apellido;
+    private String direccion;
+    private long telefono;
+    private String correo;
+    private String password;
+    private DateTime nacimiento;
+    private String sexo;
+    private String foto;
+    private String session;
+    private int sede;
+    private short rol;
+    private string mac;
+    private string ip;
+   
+
 
     public User()
     {
       
     }
-    /// <param name="id_user">Es el id del usuario en la Data Base</param>
-    public abstract void bloquear_User(long id_user);
-    /// <param name="user">Es un objeto de tipo Usuario</param>
-    public abstract void insertar_User(User user);
-    /// <param name="user">Es un objeto de tipo Usuario</param>
-    public abstract void modificar_User(User user);
-    /// <param name="id_user">Es el id del usuario en la Data Base</param>
-    public abstract void ver_User(long id_user);
+
+    public long Id_user { get => id_user; set => id_user = value; }
+    public string Primer_nombre { get => primer_nombre; set => primer_nombre = value; }
+    public string Segundo_nombre { get => segundo_nombre; set => segundo_nombre = value; }
+    public string Primer_apellido { get => primer_apellido; set => primer_apellido = value; }
+    public string Segundo_apellido { get => segundo_apellido; set => segundo_apellido = value; }
+    public string Direccion { get => direccion; set => direccion = value; }
+    public long Telefono { get => telefono; set => telefono = value; }
+    public string Correo { get => correo; set => correo = value; }
+    public string Password { get => password; set => password = value; }
+    public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
+    public string Sexo { get => sexo; set => sexo = value; }
+    public string Foto { get => foto; set => foto = value; }
+    public string Session { get => Session; set => Session = value; }
+    public int Sede { get => sede; set => sede = value; }
+    public short Rol { get => rol; set => rol = value; }
+    public string Mac { get => mac; set => mac = value; }
+    public string Ip { get => ip; set => ip = value; }
+
+  
 }
