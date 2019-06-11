@@ -110,7 +110,31 @@ public class DAOUser : Cruds_user
     /* CRUD USER*/
     public void bloquear_User(long id_user)
     {
-        throw new NotImplementedException();
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_bloquear_usuario", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = id_user;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        
     }
     public void insertar_User(User user)
     {
@@ -157,18 +181,101 @@ public class DAOUser : Cruds_user
     }
     public void modificar_User(User user)
     {
-        throw new NotImplementedException();
+        DataTable Usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_modificar_user", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = user.Id_user;
+            dataAdapter.SelectCommand.Parameters.Add("_cedula", NpgsqlDbType.Bigint).Value = user.Cedula;
+            dataAdapter.SelectCommand.Parameters.Add("_primer_nombre", NpgsqlDbType.Varchar, 100).Value = user.Primer_nombre;
+            dataAdapter.SelectCommand.Parameters.Add("_segundo_nombre", NpgsqlDbType.Varchar, 100).Value = user.Segundo_nombre;
+            dataAdapter.SelectCommand.Parameters.Add("_primer_apellido", NpgsqlDbType.Varchar, 100).Value = user.Primer_apellido;
+            dataAdapter.SelectCommand.Parameters.Add("_segundo_apellido", NpgsqlDbType.Varchar, 100).Value = user.Segundo_apellido;
+            dataAdapter.SelectCommand.Parameters.Add("_direccion", NpgsqlDbType.Text).Value = user.Direccion;
+            dataAdapter.SelectCommand.Parameters.Add("_telefono", NpgsqlDbType.Varchar, 20).Value = user.Telefono;
+            dataAdapter.SelectCommand.Parameters.Add("_correo", NpgsqlDbType.Varchar, 100).Value = user.Correo;
+            dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Varchar, 100).Value = user.Password;
+            dataAdapter.SelectCommand.Parameters.Add("_fecha", NpgsqlDbType.Date).Value = user.Nacimiento;
+            dataAdapter.SelectCommand.Parameters.Add("_sexo", NpgsqlDbType.Varchar, 100).Value = user.Sexo;
+            dataAdapter.SelectCommand.Parameters.Add("_foto", NpgsqlDbType.Text).Value = user.Foto;
+            dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = user.Session;
+            dataAdapter.SelectCommand.Parameters.Add("_sede", NpgsqlDbType.Integer).Value = user.Sede;
+            dataAdapter.SelectCommand.Parameters.Add("_rol", NpgsqlDbType.Integer).Value = user.Rol;
+            dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = user.Session;
+
+            conection.Open();
+            dataAdapter.Fill(Usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+
     }
     public DataTable ver_User(long id_user)
     {
-        throw new NotImplementedException();
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_ver_usuario", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = id_user;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuario;
     }
-    public void bloquearUser(long cedula)
+    public void DesbloquearUser(long id_user)
     {
-        throw new NotImplementedException();
-    }
-    public void DesbloquearUser(long cedula)
-    {
-        throw new NotImplementedException();
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_desbloquear_usuario", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = id_user;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        
     }
 }

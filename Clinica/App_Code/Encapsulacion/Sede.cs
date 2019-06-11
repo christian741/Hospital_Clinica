@@ -8,11 +8,11 @@ using System.Web;
 /// </summary>
 public class Sede
 {
-    private int id;
+    private long id;
     private String nombre;
     private String direccion;
     private String descripcion;
-    private String encargado;
+    private long encargado;
     private String ciudad;
     private String foto;
     private String session;
@@ -30,7 +30,7 @@ public class Sede
     public string Ciudad { get => ciudad; set => ciudad = value; }
     public string Foto { get => foto; set => foto = value; }
     public string Session { get => session; set => session = value; }
-    public string Encargado { get => encargado; set => encargado = value; }
     public string Descripcion { get => descripcion; set => descripcion = value; }
-    public int Id { get => id; set => id = value; }
+    public long Id { get => id; set => id = value; }
+    public long Encargado { get => encargado; set => encargado = value; }
 }

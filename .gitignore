@@ -258,4 +258,11 @@ paket-files/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
+Imagenes
+Reportes
 *.pyc
+*.jpg
+*.png
+*.pdf
+*.docx
+aspnet_client
