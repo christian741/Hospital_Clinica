@@ -13,9 +13,9 @@ public class Especializacion
     private String descripcion;
     private String foto;
     private string session;
-    private int edad;
+    private short edad;
     private String sexo;
-    private int prioridad;
+    private short prioridad;
 
 
     public Especializacion()
@@ -25,12 +25,12 @@ public class Especializacion
         //
     }
 
+    public int Id { get => id; set => id = value; }
     public string Nombre { get => nombre; set => nombre = value; }
     public string Descripcion { get => descripcion; set => descripcion = value; }
     public string Foto { get => foto; set => foto = value; }
     public string Session { get => session; set => session = value; }
-    public int Edad { get => edad; set => edad = value; }
+    public short Edad { get => edad; set => edad = value; }
     public string Sexo { get => sexo; set => sexo = value; }
-    public int Id { get => id; set => id = value; }
-    public int Prioridad { get => prioridad; set => prioridad = value; }
+    public short Prioridad { get => prioridad; set => prioridad = value; }
 }

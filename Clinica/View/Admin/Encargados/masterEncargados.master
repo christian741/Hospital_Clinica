@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="masterEncargados.master.cs" Inherits="View_Admin_Encargados_masterEncargados" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/ConAdmin/ConEncargados/masterEncargados.master.cs" 
+    Inherits="View_Admin_Encargados_masterEncargados" %>
 
 <!DOCTYPE html>
 

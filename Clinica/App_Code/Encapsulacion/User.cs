@@ -12,6 +12,7 @@ using System.Web;
 public  class User 
 {
     private long id_user;
+    private long cedula;
     private String primer_nombre;
     private String segundo_nombre;
     private String primer_apellido;
@@ -53,6 +54,5 @@ public  class User
     public short Rol { get => rol; set => rol = value; }
     public string Mac { get => mac; set => mac = value; }
     public string Ip { get => ip; set => ip = value; }
-
-  
+    public long Cedula { get => cedula; set => cedula = value; }
 }

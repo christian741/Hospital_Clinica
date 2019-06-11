@@ -8,14 +8,12 @@ using System.Web;
 /// </summary>
 public class Medicamento
 {
-    private Int32 codigo;
+    private long codigo;
     private string nombre;
     private string descripcion;
-
     private string stock;
- 
     private string session;
-    private Int32 sede;
+    private int sede;
        
     public Medicamento()
     {
@@ -24,11 +22,10 @@ public class Medicamento
         //
     }
 
-    public int Codigo { get => codigo; set => codigo = value; }
+    public long Codigo { get => codigo; set => codigo = value; }
     public string Nombre { get => nombre; set => nombre = value; }
     public string Descripcion { get => descripcion; set => descripcion = value; }
     public string Stock { get => stock; set => stock = value; }
     public string Session { get => session; set => session = value; }
     public int Sede { get => sede; set => sede = value; }
-   
 }

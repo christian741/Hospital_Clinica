@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="masterFarma.master.cs" Inherits="View_Farmaceuta_masterFarma" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/ConFarmaceuta/masterFarma.master.cs"
+    Inherits="View_Farmaceuta_masterFarma" %>
 
 <!DOCTYPE html>
 
