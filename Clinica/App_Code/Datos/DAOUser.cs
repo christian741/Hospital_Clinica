@@ -18,7 +18,7 @@ public class DAOUser : Cruds_user
         // TODO: Agregar aquí la lógica del constructor
         //
     }
-    /*LOGIN and EDIT*/
+    /*SEARCH*/
     public DataTable buscar_Usuario(long cedula , String password)
     {
         DataTable usuario = new DataTable();
@@ -26,10 +26,67 @@ public class DAOUser : Cruds_user
 
         try
         {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_datos_usuario", conection);
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_buscar_usuario", conection);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.Add("_cedula", NpgsqlDbType.Bigint).Value = cedula;
-            dataAdapter.SelectCommand.Parameters.Add("_password", NpgsqlDbType.Bigint).Value = password;
+            dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Varchar ,100).Value = password;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuario;
+    }
+    public DataTable buscar_Usuario_id(long id, String password)
+    {
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_buscar_usuario_id", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = id;
+            dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Varchar, 100).Value = password;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuario;
+    }
+    public DataTable buscar_Cedula(long cedula)
+    {
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_buscar_cedula", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_cedula", NpgsqlDbType.Bigint).Value = cedula;
 
             conection.Open();
 
@@ -204,7 +261,6 @@ public class DAOUser : Cruds_user
             dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = user.Session;
             dataAdapter.SelectCommand.Parameters.Add("_sede", NpgsqlDbType.Integer).Value = user.Sede;
             dataAdapter.SelectCommand.Parameters.Add("_rol", NpgsqlDbType.Integer).Value = user.Rol;
-            dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = user.Session;
 
             conection.Open();
             dataAdapter.Fill(Usuario);

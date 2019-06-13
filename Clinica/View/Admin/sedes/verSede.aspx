@@ -10,7 +10,7 @@
 
     <div class="table-responsive" style="text-align: center;">
 
-        <asp:GridView ID="GV_sedes" runat="server" AllowPaging="True" Style="max-width: 100%" CssClass="table-hover"  AutoGenerateColumns="False" DataSourceID="OBDS_sede" DataKeyNames="id_sede" Width="100%" OnRowDataBound="cargar_Botones_RowDataBound" OnRowCommand="GV_Sede_RowCommand" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+        <asp:GridView ID="GV_sedes" runat="server" AllowPaging="True" Style="max-width: 100%" CssClass="table-hover"  AutoGenerateColumns="False" DataSourceID="OBDS_sedes" DataKeyNames="id_sede" Width="100%" OnRowDataBound="cargar_Botones_RowDataBound" OnRowCommand="GV_Sede_RowCommand" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
             <Columns>
 
                 <asp:TemplateField HeaderText="Id" Visible="False">
@@ -68,7 +68,7 @@
 
                     <HeaderStyle CssClass="thead-dark"></HeaderStyle>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Encargado" HeaderStyle-CssClass="thead-dark">
+                <asp:TemplateField HeaderText="Encargado" Visible="false"  HeaderStyle-CssClass="thead-dark">
                     <EditItemTemplate>
                         <asp:Label ID="label_error_eng" CssClass="alert-danger" runat="server" Text="" Visible="false"></asp:Label>
 
@@ -86,7 +86,6 @@
                         <br />
                         <asp:FileUpload ID="FU_ed_Sede" runat="server" />
                         <br />
-                        <asp:Button ID="but_act_sed" runat="server" OnClick="but_act_sed_Click" Text="Actualizar" />
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Image ID="img_sede" runat="server" ImageUrl='<%# Bind("foto") %>' Width="30%" />
@@ -102,7 +101,14 @@
                         <asp:Label ID="label_estado" runat="server" Text='<%# Bind("estado") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField HeaderText="Editar" ShowEditButton="True" UpdateText="" />
+                <asp:TemplateField HeaderText="Editar">
+                    <EditItemTemplate>
+                       
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                         <asp:Button ID="but_editar" CssClass="btn btn-warning" runat="server" Text="Editar" CommandName="editar" CommandArgument='<%# Bind("id_sede") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="" HeaderStyle-CssClass="thead-dark">
                     <EditItemTemplate>
                         <asp:Button ID="but_bloquear" CssClass="btn btn-danger" runat="server" Text="Bloquear" CommandName="bloquear" CommandArgument='<%# Bind("id_sede") %>' />
@@ -129,6 +135,7 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#275353" />
         </asp:GridView>
+        <asp:ObjectDataSource ID="OBDS_sedes" runat="server" SelectMethod="ver_Sedes" TypeName="DAOSede"></asp:ObjectDataSource>
     </div>
 
 

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Doctor/masterDoctor.master" 
-    AutoEventWireup="true" CodeFile="~/Controller/ConDoctor/indexDoctor.aspx.cs" Inherits="View_Doctor_Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Recepcionista/masterRecepcionista.master" AutoEventWireup="true" CodeFile="indexRecep.aspx.cs" Inherits="View_Recepcionista_Default2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 
@@ -15,7 +14,7 @@
                     <thead>
                         <tr>
 
-                            <caption>Información del Doctor</caption>
+                            <caption>Información del Administrador</caption>
                             <div class="container-fluid" style="text-align: center">
                                 INFORMACION DEL USUARIO
                             </div>
@@ -144,6 +143,6 @@
 
 
     <script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
-  
+
 </asp:Content>
 

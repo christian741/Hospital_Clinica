@@ -1,10 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Admin/masterAdmin.master" AutoEventWireup="true"
+﻿<%@ Page Title="Inicio Admin" Language="C#" MasterPageFile="~/View/Admin/masterAdmin.master" AutoEventWireup="true"
     CodeFile="~/Controller/ConAdmin/indexAdmin.aspx.cs" Inherits="View_Admin_Default" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:FormView ID="FV_usuario" runat="server" >
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:FormView ID="FV_usuario" runat="server" DataSourceID="OBDS_user">
         <ItemTemplate>
             <div class="table-responsive">
                 <table class="table table-lg">
@@ -40,11 +44,15 @@
                                             </td>
                                             <td>
                                                 <asp:Label ID="label2" runat="server" Text="Nombre:"></asp:Label>
-                                                <asp:Label ID="label_nombre" runat="server" Text='<%# Bind("nombre") %>'></asp:Label>
+                                                <asp:Label ID="label_primer_nombre" runat="server" Text='<%# Bind("primer_nombre") %> '></asp:Label>
+                                                <asp:Label ID="label_segundo_nombre" runat="server" Text=' <%# Bind("segundo_nombre") %>'></asp:Label>
+
                                             </td>
                                             <td>
                                                 <asp:Label ID="label3" runat="server" Text="Apellido:"></asp:Label>
-                                                <asp:Label ID="label_apellido" runat="server" Text='<%# Bind("apellido") %>'></asp:Label>
+                                                <asp:Label ID="label_primer_apellido" runat="server" Text=' <%# Bind("primer_apellido") %>'></asp:Label>
+                                                <asp:Label ID="label_segundo_apellido" runat="server" Text=' <%# Bind("segundo_apellido") %>'></asp:Label>
+
                                             </td>
                                         </tr>
                                     </tbody>
@@ -94,38 +102,26 @@
                             <th scope="row"></th>
                             <td></td>
                             <td>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Especial">
-                                    Actualizar Datos
-                                </button>
+                                 <!-- ModalPopupExtender -->
+                                
 
+                                <asp:Button ID="but_actualizar" runat="server" Text="Actualizar Datos" />
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="Especial" tabindex="-1" role="dialog" aria-labelledby="Especial1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="Especial1">Validación del Usuario</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
+                               
 
-                                                <asp:Label ID="label10" runat="server" Text="Digite su Contraseña:"></asp:Label>
+                                <cc1:ModalPopupExtender ID="modal" runat="server" PopupControlID="Panel" TargetControlID="but_actualizar"
+                                    CancelControlID="but_salir" BackgroundCssClass="Background">
+                                </cc1:ModalPopupExtender>
 
-                                                <asp:TextBox ID="text_validar_pass" TextMode="Password" runat="server"></asp:TextBox>
+                                <asp:Panel ID="Panel" runat="server" CssClass="Popup" align="center" Style="display: none">
+                                    Verificacion Datos
+                                   
+                                    <asp:Label ID="label10" runat="server" Text="Digite su Contraseña:"></asp:Label><br />
+                                    <asp:TextBox ID="text_validar_pass" TextMode="Password" runat="server"></asp:TextBox><br />
+                                    <asp:Button ID="button_editar" runat="server" Text="Validar Password" OnClick="button_editar_Click1" />
+                                    <asp:Button ID="but_salir" runat="server" Text="Salir" />
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <asp:Button ID="button_editar" runat="server" Text="Validar Password" OnClick="button_editar_Click1" />
-
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </asp:Panel>
                             </td>
                         </tr>
 
@@ -135,9 +131,18 @@
             </div>
         </ItemTemplate>
     </asp:FormView>
-    
 
-   
 
+
+
+    <asp:ObjectDataSource ID="OBDS_user" runat="server" SelectMethod="ver_User" TypeName="DAOUser">
+        <SelectParameters>
+            <asp:SessionParameter Name="id_user" SessionField="usuario" Type="Int64" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+
+
+    <script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
 </asp:Content>
 

@@ -6,17 +6,71 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link type="text/css" href="../../bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
+    <!-- CSS Bootstrap & Custom -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+
+        .Background
+
+        {
+
+            background-color: Black;
+
+            filter: alpha(opacity=90);
+
+            opacity: 0.8;
+
+        }
+
+        .Popup
+
+        {
+
+            background-color: #FFFFFF;
+
+            border-width: 3px;
+
+            border-style: solid;
+
+            border-color: black;
+
+            padding-top: 10px;
+
+            padding-left: 10px;
+
+            width: 400px;
+
+            height: 350px;
+
+        }
+
+        .lbl
+
+        {
+
+            font-size:16px;
+
+            font-style:italic;
+
+            font-weight:bold;
+
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    
+    <form id="form1" runat="server"> 
+    <asp:Image ID="image_user" runat="server"  Width="30%" CssClass="rounded-circle"/>
     <asp:Button ID="but_cerrar" runat="server" OnClick="but_cerrar_Click" Text="Cerrar Sesion" />
-               
+    <asp:HyperLink ID="HPL_verSede" runat="server" NavigateUrl="~/View/Admin/sedes/verSede.aspx">Ver Sedes</asp:HyperLink>
+    <asp:HyperLink ID="HPL_registrarSede" runat="server" NavigateUrl="~/View/Admin/sedes/registrarSede.aspx">Registrar Sedes</asp:HyperLink>
+   
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         

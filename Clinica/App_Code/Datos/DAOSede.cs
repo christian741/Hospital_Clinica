@@ -18,6 +18,35 @@ public class DAOSede
         // TODO: Agregar aquí la lógica del constructor
         //
     }
+    /* SEARH */
+    public DataTable ver_Sedes()
+    {
+        DataTable usuario = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_mostrar_sede", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            conection.Open();
+
+            dataAdapter.Fill(usuario);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuario;
+    }
+
     /* CRUD SEDE*/
     public void bloquear_Sede(long id_sede)
     {
@@ -56,13 +85,13 @@ public class DAOSede
         {
             NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_insertar_sede", conection);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("_nombre_sede", NpgsqlDbType.Varchar, 100).Value = sede.Nombre;
-            dataAdapter.SelectCommand.Parameters.Add("_descripcion_sede", NpgsqlDbType.Text).Value = sede.Descripcion;
-            dataAdapter.SelectCommand.Parameters.Add("_ciudad_sede", NpgsqlDbType.Text).Value = sede.Ciudad;
-            dataAdapter.SelectCommand.Parameters.Add("_direccion_sede", NpgsqlDbType.Text).Value = sede.Direccion;
-            dataAdapter.SelectCommand.Parameters.Add("_foto_sede", NpgsqlDbType.Text).Value = sede.Foto;
-            dataAdapter.SelectCommand.Parameters.Add("_session_sede", NpgsqlDbType.Text).Value = sede.Session;
-            dataAdapter.SelectCommand.Parameters.Add("_id_encargado", NpgsqlDbType.Bigint).Value = sede.Encargado;
+            dataAdapter.SelectCommand.Parameters.Add("_nombre", NpgsqlDbType.Varchar, 100).Value = sede.Nombre;
+            dataAdapter.SelectCommand.Parameters.Add("_direccion", NpgsqlDbType.Text).Value = sede.Direccion;
+            dataAdapter.SelectCommand.Parameters.Add("_descripcion", NpgsqlDbType.Text).Value = sede.Descripcion;
+            dataAdapter.SelectCommand.Parameters.Add("_encargado", NpgsqlDbType.Bigint).Value = sede.Encargado;
+            dataAdapter.SelectCommand.Parameters.Add("_ciudad", NpgsqlDbType.Text).Value = sede.Ciudad;
+            dataAdapter.SelectCommand.Parameters.Add("_foto", NpgsqlDbType.Text).Value = sede.Foto;
+            dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = sede.Session;
      
             conection.Open();
             dataAdapter.Fill(Usuario);
@@ -87,16 +116,15 @@ public class DAOSede
 
         try
         {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_modificar_user", conection);
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_modificar_sede", conection);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = sede.Id;
-            dataAdapter.SelectCommand.Parameters.Add("_nombre_sede", NpgsqlDbType.Varchar, 100).Value = sede.Nombre;
-            dataAdapter.SelectCommand.Parameters.Add("_descripcion_sede", NpgsqlDbType.Text).Value = sede.Descripcion;
-            dataAdapter.SelectCommand.Parameters.Add("_ciudad_sede", NpgsqlDbType.Text).Value = sede.Ciudad;
-            dataAdapter.SelectCommand.Parameters.Add("_direccion_sede", NpgsqlDbType.Text).Value = sede.Direccion;
-            dataAdapter.SelectCommand.Parameters.Add("_foto_sede", NpgsqlDbType.Text).Value = sede.Foto;
-            dataAdapter.SelectCommand.Parameters.Add("_session_sede", NpgsqlDbType.Text).Value = sede.Session;
-            dataAdapter.SelectCommand.Parameters.Add("_id_encargado", NpgsqlDbType.Bigint).Value = sede.Encargado;
+            dataAdapter.SelectCommand.Parameters.Add("_nombre", NpgsqlDbType.Varchar, 100).Value = sede.Nombre;
+            dataAdapter.SelectCommand.Parameters.Add("_direccion", NpgsqlDbType.Text).Value = sede.Direccion;
+            dataAdapter.SelectCommand.Parameters.Add("_descripcion", NpgsqlDbType.Text).Value = sede.Descripcion;
+            dataAdapter.SelectCommand.Parameters.Add("_encargado", NpgsqlDbType.Bigint).Value = sede.Encargado;
+            dataAdapter.SelectCommand.Parameters.Add("_ciudad", NpgsqlDbType.Text).Value = sede.Ciudad;
+            dataAdapter.SelectCommand.Parameters.Add("_foto", NpgsqlDbType.Text).Value = sede.Foto;
 
             conection.Open();
             dataAdapter.Fill(Usuario);

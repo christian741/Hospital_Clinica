@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,9 @@ public partial class View_Doctor_masterDoctor : System.Web.UI.MasterPage
         {
             Response.Redirect("../Principal/index.aspx");
         }
+        DataTable foto = new DAOUser().ver_User(Convert.ToInt64(Session["usuario"].ToString()));
+        image_user.ImageUrl = foto.Rows[0]["foto"].ToString();
+        
     }
     protected void but_cerrar_Click(object sender, EventArgs e)
     {

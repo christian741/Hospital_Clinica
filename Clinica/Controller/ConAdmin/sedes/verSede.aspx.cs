@@ -42,19 +42,23 @@ public partial class View_Admin_Default : System.Web.UI.Page
             long dato = Convert.ToInt32(e.CommandArgument.ToString());
             new DAOSede().bloquear_Sede(dato);
             Response.Redirect("~/View/Admin/sedes/verSedes.aspx");
-
-
         }
-        else
+        if (e.CommandName.Equals("desbloquear"))
         {
-            if (e.CommandName.Equals("desbloquear"))
-            {
-                long dato = Convert.ToInt32(e.CommandArgument.ToString());
+            long dato = Convert.ToInt64(e.CommandArgument.ToString());
 
-                new DAOSede().DesbloquearSede(dato);
-                Response.Redirect("~/View/Admin/sedes/verSedes.aspx");
+            new DAOSede().DesbloquearSede(dato);
+            Response.Redirect("~/View/Admin/sedes/verSedes.aspx");
 
-            }
         }
+        if (e.CommandName.Equals("editar"))
+        {
+            long dato = Convert.ToInt64(e.CommandArgument.ToString());
+
+           
+            Response.Redirect("~/View/Admin/sedes/editarSede.aspx");
+
+        }
+
     }
 }

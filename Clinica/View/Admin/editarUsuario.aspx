@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Admin/masterAdmin.master" AutoEventWireup="true" 
+﻿<%@ Page Title="Editar User" Language="C#" MasterPageFile="~/View/Admin/masterAdmin.master" AutoEventWireup="true" 
     CodeFile="~/Controller/ConAdmin/editarUsuario.aspx.cs" Inherits="View_Admin_Default3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:FormView ID="FV_usuario" runat="server">
+    <asp:FormView ID="FV_usuario" runat="server" DataSourceID="OBDS_editUser">
         <ItemTemplate>
             <div class="table-responsive">
                 <table class="table table-sm">
@@ -48,18 +48,20 @@
 
                                             </td>
                                             <td>
-                                                <asp:Label ID="label3" runat="server" Text='<%# Bind("nombre") %>' Visible="false"></asp:Label>
 
                                                 <asp:Label ID="label_nom" runat="server" Text="Nombre:"></asp:Label>
-                                                <asp:TextBox ID="txt_nombre" runat="server" MaxLength="50" Text='<%# Bind("nombre") %>'></asp:TextBox>
+                                                <asp:TextBox ID="txt_primer_nombre" runat="server" MaxLength="50" Text='<%# Bind("primer_nombre") %>'></asp:TextBox>
+                                                <asp:TextBox ID="txt_segundo_nombre" runat="server" MaxLength="50" Text='<%# Bind("segundo_nombre") %>'></asp:TextBox>
+
                                                 <asp:Label ID="error_nom" runat="server" Visible="false"></asp:Label>
                                                 <br />
                                                 <br />
                                             </td>
                                             <td>
-                                                <asp:Label ID="label4" runat="server" Text='<%# Bind("apellido") %>' Visible="false"></asp:Label>
                                                 <asp:Label ID="label_apellido" runat="server" Text="Apellido:"></asp:Label>
-                                                <asp:TextBox ID="txt_apellido" runat="server" MaxLength="50" Text='<%# Bind("apellido") %>'></asp:TextBox>
+                                                <asp:TextBox ID="txt_primer_apellido" runat="server" MaxLength="50" Text=' <%# Bind("primer_apellido") %>'></asp:TextBox>
+                                                <asp:TextBox ID="text_segundo_apellido" runat="server" MaxLength="50" Text='<%# Bind("segundo_apellido") %>'></asp:TextBox>
+
                                                 <asp:Label ID="error_ape" runat="server" Visible="false"></asp:Label>
                                                 <br />
                                                 <br />
@@ -74,7 +76,6 @@
                         <tr>
                             <th scope="row"></th>
                             <td>
-                                <asp:Label ID="label5" runat="server" Text='<%# Bind("telefono") %>' Visible="false"></asp:Label>
 
                                 <asp:Label ID="label_tel" runat="server" Text="Telefono:"></asp:Label>
                                 <asp:TextBox ID="txt_telefono" TextMode="Phone" MaxLength="10" runat="server" Text='<%# Bind("telefono") %>'></asp:TextBox>
@@ -83,10 +84,9 @@
                                 <br />
                             </td>
                             <td>
-                                <asp:Label ID="label6" runat="server" Text='<%# Bind("direccion") %>' Visible="false"></asp:Label>
 
                                 <asp:Label ID="label_dir" runat="server" Text="Dirección:"></asp:Label>
-                                <asp:TextBox ID="txt_direccion" MaxLength="50" runat="server" Text='<%# Bind("direccion") %>'></asp:TextBox>
+                                <asp:TextBox ID="txt_direccion" TextMode="MultiLine" MaxLength="50" runat="server" Text='<%# Bind("direccion") %>'></asp:TextBox>
                                 <asp:Label ID="error_dir" runat="server" Visible="false"></asp:Label>
                                 <br />
                                 <br />
@@ -97,7 +97,7 @@
                         <tr>
                             <th scope="row"></th>
                             <td>
-                                <asp:Label ID="label7" runat="server" Text='<%# Bind("correo") %>' Visible="false"></asp:Label>
+                                <asp:Label ID="label7" runat="server" Text='<%# Bind("correo") %>'></asp:Label>
 
                                 <asp:Label ID="label_correo" runat="server" Text="Correo:"></asp:Label>
                                 <asp:TextBox ID="txt_correo" MaxLength="50" TextMode="Email" runat="server" Text='<%# Bind("correo") %>'></asp:TextBox>
@@ -106,7 +106,6 @@
                                 <br />
                             </td>
                             <td>
-                                <asp:Label ID="label8" runat="server" Text='<%# Bind("clave") %>' Visible="false"></asp:Label>
 
                                 <asp:Label ID="label_contraseña" runat="server" Text="Contraseña:"></asp:Label>
                                 <asp:Label ID="txt_clave" runat="server" Text='<%# Bind("clave") %>'></asp:Label>
@@ -114,6 +113,9 @@
                                 <br />
                                 <asp:Label ID="label_nuevaContra" runat="server" Text="Escriba la nueva Contraseña:"></asp:Label>
                                 <asp:TextBox ID="txt_contraseña" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
+
+                                <asp:Label ID="label_confima" runat="server" Text="Porfavor otravez Escriba la nueva Contraseña:"></asp:Label>
+                                <asp:TextBox ID="txt_contraseña_confirm" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
 
                                 <asp:Label ID="error_clave" runat="server" Visible="false"></asp:Label>
                                 <br />
@@ -167,6 +169,14 @@
             </div>
         </ItemTemplate>
     </asp:FormView>
+
+
+
+    <asp:ObjectDataSource ID="OBDS_editUser" runat="server" SelectMethod="ver_User" TypeName="DAOUser">
+        <SelectParameters>
+            <asp:SessionParameter Name="id_user" SessionField="usuario" Type="Int64" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 

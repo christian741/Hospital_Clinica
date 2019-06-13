@@ -18,7 +18,7 @@ public  class User
     private String primer_apellido;
     private String segundo_apellido;
     private String direccion;
-    private long telefono;
+    private String telefono;
     private String correo;
     private String password;
     private DateTime nacimiento;
@@ -43,13 +43,13 @@ public  class User
     public string Primer_apellido { get => primer_apellido; set => primer_apellido = value; }
     public string Segundo_apellido { get => segundo_apellido; set => segundo_apellido = value; }
     public string Direccion { get => direccion; set => direccion = value; }
-    public long Telefono { get => telefono; set => telefono = value; }
+    public String Telefono { get => telefono; set => telefono = value; }
     public string Correo { get => correo; set => correo = value; }
     public string Password { get => password; set => password = value; }
     public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
     public string Sexo { get => sexo; set => sexo = value; }
     public string Foto { get => foto; set => foto = value; }
-    public string Session { get => Session; set => Session = value; }
+    public string Session { get => session; set => session = value; }
     public int Sede { get => sede; set => sede = value; }
     public short Rol { get => rol; set => rol = value; }
     public string Mac { get => mac; set => mac = value; }

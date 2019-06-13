@@ -11,4 +11,15 @@ public partial class View_Doctor_Default : System.Web.UI.Page
     {
 
     }
+
+
+    protected void button_editar_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void button_salir_Click(object sender, EventArgs e)
+    {
+
+    }
 }

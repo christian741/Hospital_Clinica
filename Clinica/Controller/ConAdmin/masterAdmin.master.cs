@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,8 +12,11 @@ public partial class View_Admin_masterAdmin : System.Web.UI.MasterPage
     {
         if (Session["usuario"] == null || !Session["rol"].ToString().Equals("5"))
         {
-            Response.Redirect("../Principal/index.aspx");
+            Response.Redirect("../../Principal/index.aspx");
         }
+        DataTable foto = new DAOUser().ver_User(Convert.ToInt64(Session["usuario"].ToString()));
+        image_user.ImageUrl = foto.Rows[0]["foto"].ToString();
+        
     }
     protected void but_cerrar_Click(object sender, EventArgs e)
     {
@@ -22,6 +26,6 @@ public partial class View_Admin_masterAdmin : System.Web.UI.MasterPage
         Session["usuario"] = null;
         Session["sede"] = null;
         Session["rol"] = null;
-        Response.Redirect("../Principal/index.aspx");
+        Response.Redirect("../../Principal/index.aspx");
     }
 }

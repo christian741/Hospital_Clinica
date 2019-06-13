@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Principal/MasterPrincipal.master" 
+﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/View/Principal/MasterPrincipal.master" 
     AutoEventWireup="true" CodeFile="~/Controller/ConPrincipal/registro.aspx.cs" Inherits="View_Principal_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -41,7 +41,12 @@
     <asp:TextBox ID="text_confirmacion_pass" MaxLength="20" TextMode="Password" runat="server"></asp:TextBox>
         
     <asp:Label ID="label_sexo" runat="server" Text="Seleccione un Sexo:"></asp:Label>
-    <asp:DropDownList ID="DDL_sexo" runat="server"></asp:DropDownList>
+    <asp:DropDownList ID="DDL_sexo" runat="server">
+        <asp:ListItem>Seleccione un Sexo</asp:ListItem>
+        <asp:ListItem>Maculino</asp:ListItem>
+        <asp:ListItem>Femenino</asp:ListItem>
+        <asp:ListItem>Otro</asp:ListItem>
+    </asp:DropDownList>
 
     <asp:Label ID="label_fecha" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
     <asp:TextBox ID="text_fecha" TextMode="Date" runat="server"></asp:TextBox>

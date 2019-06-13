@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Principal/MasterPrincipal.master"
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/View/Principal/MasterPrincipal.master"
     AutoEventWireup="true" CodeFile="~/Controller/ConPrincipal/login.aspx.cs" Inherits="View_Principal_Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
