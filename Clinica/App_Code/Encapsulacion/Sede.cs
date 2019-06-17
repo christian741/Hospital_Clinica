@@ -12,7 +12,6 @@ public class Sede
     private String nombre;
     private String direccion;
     private String descripcion;
-    private long encargado;
     private String ciudad;
     private String foto;
     private String session;
@@ -32,5 +31,4 @@ public class Sede
     public string Session { get => session; set => session = value; }
     public string Descripcion { get => descripcion; set => descripcion = value; }
     public long Id { get => id; set => id = value; }
-    public long Encargado { get => encargado; set => encargado = value; }
 }

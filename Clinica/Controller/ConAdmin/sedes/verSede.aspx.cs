@@ -9,6 +9,7 @@ public partial class View_Admin_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+      
 
     }
 
@@ -54,9 +55,8 @@ public partial class View_Admin_Default : System.Web.UI.Page
         if (e.CommandName.Equals("editar"))
         {
             long dato = Convert.ToInt64(e.CommandArgument.ToString());
-
-           
-            Response.Redirect("~/View/Admin/sedes/editarSede.aspx");
+            Session["editar"] = dato;
+            Response.Redirect("~/View/Admin/sedes/editarSede.aspx?sede="+dato);
 
         }
 

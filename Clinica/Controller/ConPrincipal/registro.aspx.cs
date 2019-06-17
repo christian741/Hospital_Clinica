@@ -50,7 +50,7 @@ public partial class View_Principal_Default : System.Web.UI.Page
             user.Sexo = DDL_sexo.SelectedValue;
         }
         user.Session = Session.SessionID;
-        user.Rol = Convert.ToInt16(Session["rol"].ToString());
+        user.Rol = 1;
         user.Sede = Convert.ToInt32(Session["sede"].ToString());
         FileUpload file = FU_imagen;
         if (file.PostedFile.FileName != null && !(System.IO.Path.GetExtension(file.PostedFile.FileName).Equals(".jpg") || System.IO.Path.GetExtension(file.PostedFile.FileName).Equals(".png")))

@@ -51,10 +51,6 @@
     <asp:Label ID="label_fecha" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
     <asp:TextBox ID="text_fecha" TextMode="Date" runat="server"></asp:TextBox>
 
-
-
-
-   
     <asp:Button ID="but_registrar" runat="server" Text="Registrarse" OnClick="but_registrar_Click" />
 </asp:Content>
 

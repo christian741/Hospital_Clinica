@@ -43,6 +43,27 @@
             height: 350px;
 
         }
+        .Popup_user
+
+        {
+
+            background-color: #FFFFFF;
+
+            border-width: 3px;
+
+            border-style: solid;
+
+            border-color: black;
+
+            padding-top: 10px;
+
+            padding-left: 10px;
+
+            width: 400px;
+
+            height: 350px;
+
+        }
 
         .lbl
 

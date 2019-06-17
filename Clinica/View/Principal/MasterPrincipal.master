@@ -14,6 +14,55 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <style type="text/css">
+
+        .Background
+
+        {
+
+            background-color: Black;
+
+            filter: alpha(opacity=90);
+
+            opacity: 0.8;
+
+        }
+
+        .Popup
+
+        {
+
+            background-color: #FFFFFF;
+
+            border-width: 3px;
+
+            border-style: solid;
+
+            border-color: black;
+
+            padding-top: 10px;
+
+            padding-left: 10px;
+
+            width: 400px;
+
+            height: 350px;
+
+        }
+
+        .lbl
+
+        {
+
+            font-size:16px;
+
+            font-style:italic;
+
+            font-weight:bold;
+
+        }
+
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
