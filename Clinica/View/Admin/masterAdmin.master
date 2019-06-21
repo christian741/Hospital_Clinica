@@ -7,7 +7,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- CSS Bootstrap & Custom -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css">
     <style type="text/css">
 
         .Background
@@ -78,26 +79,41 @@
         }
 
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title></title>
+      <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server"> 
-    <asp:Image ID="image_user" runat="server"  Width="30%" CssClass="rounded-circle"/>
-    <asp:Button ID="but_cerrar" runat="server" OnClick="but_cerrar_Click" Text="Cerrar Sesion" />
-    <asp:HyperLink ID="HPL_verSede" runat="server" NavigateUrl="~/View/Admin/sedes/verSede.aspx">Ver Sedes</asp:HyperLink>
-    <asp:HyperLink ID="HPL_registrarSede" runat="server" NavigateUrl="~/View/Admin/sedes/registrarSede.aspx">Registrar Sedes</asp:HyperLink>
+    <div class="container-fluid">
+        <asp:Image ID="image_user" runat="server"  Width="30%" CssClass="rounded-circle"/>
+        <asp:Button ID="but_cerrar" runat="server" OnClick="but_cerrar_Click" Text="Cerrar Sesion" />
+    </div>
+
+        <asp:HyperLink ID="HPL_verSede" runat="server" NavigateUrl="~/View/Admin/sedes/verSede.aspx">Ver Sedes</asp:HyperLink>
+        <asp:HyperLink ID="HPL_registrarSede" runat="server" NavigateUrl="~/View/Admin/sedes/registrarSede.aspx">Registrar Sedes</asp:HyperLink>
+        <asp:HyperLink ID="HPL_verRecep" runat="server" NavigateUrl="~/View/Admin/recepcionistas/verRecep.aspx">Ver Sedes</asp:HyperLink>
+        <asp:HyperLink ID="HPL_registarRecep" runat="server" NavigateUrl="~~/View/Admin/recepcionistas/registrarRecep.aspx">Registrar Sedes</asp:HyperLink>
    
+    
+    
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
+
+    <footer>
+
+    </footer>
     </form>
+    <!--<script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
+    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../../Scripts/popper.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
 </body>
 </html>

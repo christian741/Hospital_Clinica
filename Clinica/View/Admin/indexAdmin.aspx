@@ -105,22 +105,24 @@
                                  <!-- ModalPopupExtender -->
                                 
 
-                                <asp:Button ID="but_actualizar" runat="server" Text="Actualizar Datos" />
-
-                               
+                                <asp:Button ID="but_actualizar" CssClass="btn btn-info" runat="server" Text="Actualizar Datos" />
 
                                 <cc1:ModalPopupExtender ID="modal" runat="server" PopupControlID="Panel" TargetControlID="but_actualizar"
                                     CancelControlID="but_salir" BackgroundCssClass="Background">
                                 </cc1:ModalPopupExtender>
 
-                                <asp:Panel ID="Panel" runat="server" CssClass="Popup" align="center" Style="display: none">
-                                    Verificacion Datos
-                                   
-                                    <asp:Label ID="label10" runat="server" Text="Digite su Contraseña:"></asp:Label><br />
-                                    <asp:TextBox ID="text_validar_pass" TextMode="Password" runat="server"></asp:TextBox><br />
-                                    <asp:Button ID="button_editar" runat="server" Text="Validar Password" OnClick="button_editar_Click1" />
-                                    <asp:Button ID="but_salir" runat="server" Text="Salir" />
-
+                                <asp:Panel ID="Panel" runat="server" CssClass="" align="center" Style="display: none">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Verificacion Datos</h5><br />
+                                            <p class="card-text">
+                                                 <asp:Label ID="label10" runat="server" Text="Digite su Contraseña:"></asp:Label><br />
+                                                  <asp:TextBox ID="text_validar_pass" TextMode="Password" runat="server"></asp:TextBox><br />
+                                            </p>
+                                            <asp:Button ID="button_editar" CssClass="btn btn-outline-primary" runat="server" Text="Validar Password" OnClick="button_editar_Click1" />
+                                            <asp:Button ID="but_salir" CssClass="btn btn-danger" runat="server" Text="Salir" />
+                                        </div>
+                                    </div>
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -133,7 +135,28 @@
     </asp:FormView>
 
 
+    <asp:Label ID="label_oculto" runat="server" Text=""></asp:Label>
 
+    <cc1:ModalPopupExtender ID="modal2" runat="server" PopupControlID="Panel2" TargetControlID="label_oculto"
+        CancelControlID="but_salir" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <asp:Panel ID="Panel2" runat="server" CssClass="alert-warning" align="center" Style="display: none">
+        <div class="card text-white bg-warning">
+            <div class="card-body">
+                <h5 class="card-title"> <strong><asp:Label ID="label_titulo_error" CssClass="" runat="server" Text=""></asp:Label></strong><br /></h5>
+                <br />
+                <p class="card-text">
+                      <p class="mb-0">
+                      <asp:Label ID="label_error" runat="server" Text=""></asp:Label>
+                </p>
+                <p class="mb-0"> <asp:Button ID="but_salir" CssClass="btn btn-outline-dark" runat="server" Text="Aceptar" /></p>
+            </div>
+        </div>
+       
+      
+          
+    </asp:Panel>
 
     <asp:ObjectDataSource ID="OBDS_user" runat="server" SelectMethod="ver_User" TypeName="DAOUser">
         <SelectParameters>
@@ -145,4 +168,5 @@
 
     <script type="text/javascript" src="../../bootstrap/js/min/bootstrap.min.js"></script>
 </asp:Content>
+
 

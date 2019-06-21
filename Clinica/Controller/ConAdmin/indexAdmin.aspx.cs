@@ -25,13 +25,19 @@ public partial class View_Admin_Default : System.Web.UI.Page
         DataTable validar = new DAOUser().buscar_Usuario_id(Convert.ToInt64(Session["usuario"].ToString()), password);
         if (validar.Rows.Count < 1)
         {
+            Panel2.CssClass = "bg-warning";
+            label_titulo_error.Text = "!Alerta¡";
+            label_error.Text = "Lo siento su Contraseña es incorrecta";
+            modal2.Show();
+
             return;
         }
         else
         {
 
             ((ModalPopupExtender)FV_usuario.FindControl("modal")).Hide();
-             Response.Redirect("~/View/Admin/editarUsuario.aspx");
+            Session["editar"] = Session["usuario"].ToString();
+             Response.Redirect("~/View/Admin/editarUsuario.aspx?id="+Session["usuario"].ToString());
 
         }
 

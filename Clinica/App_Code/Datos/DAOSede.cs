@@ -144,7 +144,7 @@ public class DAOSede
         {
             NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("clinica.f_modificar_sede", conection);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Bigint).Value = sede.Id;
+            dataAdapter.SelectCommand.Parameters.Add("_id", NpgsqlDbType.Integer).Value = sede.Id;
             dataAdapter.SelectCommand.Parameters.Add("_nombre", NpgsqlDbType.Varchar, 100).Value = sede.Nombre;
             dataAdapter.SelectCommand.Parameters.Add("_direccion", NpgsqlDbType.Text).Value = sede.Direccion;
             dataAdapter.SelectCommand.Parameters.Add("_descripcion", NpgsqlDbType.Text).Value = sede.Descripcion;

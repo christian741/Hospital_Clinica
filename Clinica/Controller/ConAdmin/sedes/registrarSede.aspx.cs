@@ -38,6 +38,7 @@ public partial class View_Admin_Default3 : System.Web.UI.Page
             FU_registro_sede.PostedFile.SaveAs(Server.MapPath(sede.Foto));
         }
         new DAOSede().insertar_Sede(sede);
+        Response.Redirect("~/View/Admin/sedes/verSede.aspx");
 
 
     }

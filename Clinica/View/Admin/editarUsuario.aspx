@@ -127,7 +127,7 @@
                             <th scope="row"></th>
                             <td>e
                                 <asp:Label ID="label_nac" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
-                                <asp:Label ID="label9" runat="server" Text='<%# Bind("fecha_nacimieno") %>'></asp:Label>
+                                <asp:Label ID="label9" runat="server" Text='<%# Bind("fecha_nacimieno","{0:d}") %>'></asp:Label>
                                 <br />
                                 <asp:TextBox ID="txt_nacimiento" runat="server" TextMode="Date"></asp:TextBox>
                                 <asp:Label ID="error_nac" runat="server" Visible="false"></asp:Label>

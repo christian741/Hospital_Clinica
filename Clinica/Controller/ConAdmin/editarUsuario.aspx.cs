@@ -10,7 +10,22 @@ public partial class View_Admin_Default3 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        String id_user = Request.QueryString["id"];
+        try
+        {
+            if (!Session["editar"].ToString().Equals(id_user) || Session["editar"] == null)
+            {
+                Session["editar"] = null;
+                Response.Redirect("~/View/Admin/indexAdmin.aspx");
+            }
+        }
+        catch (Exception ex)
+        {
+            if (ex.Equals(ex))
+            {
+                Response.Redirect("~/View/Admin/indexAdmin.aspx");
+            }
+        }
     }
     protected void button_salir_Click(object sender, EventArgs e)
     {
@@ -83,6 +98,7 @@ public partial class View_Admin_Default3 : System.Web.UI.Page
             file.PostedFile.SaveAs(Server.MapPath(user.Foto));
         }
         new DAOUser().modificar_User(user);
+        Session["editar"] = null;
         Response.Redirect("~/View/Admin/indexAdmin.aspx");
     }
 

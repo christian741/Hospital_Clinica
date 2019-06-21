@@ -27,14 +27,6 @@
     <br />
     <asp:TextBox ID="text_sede_descripcion" placeholder="Digite una Descripción de la Sede" runat="server"></asp:TextBox>
     <br />
-    <asp:Label ID="label_buscar" runat="server" Text="Buscar Encargado por Cedula"></asp:Label>
-    <br />
-    <asp:Label ID="label_error_busqueda" runat="server" Text=""></asp:Label>
-    <br />
-    <asp:TextBox ID="text_buscar" placeholder="Digite la Cedula" runat="server"></asp:TextBox>
-    <br />
-    
-
     <br />
     <asp:Label ID="label_ciudad_sede" runat="server" Text="Ciudad de la Sede: "></asp:Label>
     <br />

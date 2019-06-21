@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="masterLabo.master.cs" Inherits="View_Laboratorista_masterLabo" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/ConLaboratorista/masterLabo.master.cs" Inherits="View_Laboratorista_masterLabo" %>
 
 <!DOCTYPE html>
 

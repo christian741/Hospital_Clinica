@@ -15,14 +15,26 @@ public partial class View_Principal_Default2 : System.Web.UI.Page
 
     protected void but_login_Click(object sender, EventArgs e)
     {
-        DataTable datos_usuario = new DAOUser().buscar_Usuario(Convert.ToInt32(text_cedula.Text), text_password.Text);
 
+        DataTable datos_usuario = new DAOUser().buscar_Usuario(Convert.ToInt32(text_cedula.Text), text_password.Text);
+        if (datos_usuario.Rows.Count <= 0)
+        {
+            Panel2.CssClass = "bg-danger";
+            label_titulo_error.Text = "!Alerta¡";
+            label_error.Text = "Lo siento sus datos no coinciden";
+            modal2.Show();
+            return;
+        }
 
         if (datos_usuario.Rows.Count > 0)
         {
             if (datos_usuario.Rows[0]["estado"].ToString().Equals("2"))
             {
-              
+                //Validar citas pendientes
+                Panel2.CssClass = "bg-Warning";
+                label_titulo_error.Text = "!Alerta¡";
+                label_error.Text = "Lo siento su usuario esta bloqueado";
+                modal2.Show();
                 return;
             }
             if (datos_usuario.Rows[0]["rol_id"].ToString().Equals("1"))

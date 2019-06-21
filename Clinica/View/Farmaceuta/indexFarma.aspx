@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Farmaceuta/masterFarma.master" AutoEventWireup="true" CodeFile="indexFarma.aspx.cs" Inherits="View_Farmaceuta_Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Farmaceuta/masterFarma.master" AutoEventWireup="true" 
+    CodeFile="~/Controller/ConFarmaceuta/indexFarma.aspx.cs" Inherits="View_Farmaceuta_Default2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 

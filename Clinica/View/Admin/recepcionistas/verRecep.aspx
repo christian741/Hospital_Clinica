@@ -49,6 +49,11 @@
                         <asp:Button ID="but_editar" CssClass="btn btn-warning" runat="server" Text="Editar" CommandName="editar" CommandArgument='<%# Bind("id_usuario") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
+                 <asp:TemplateField Visible="False">
+                    <ItemTemplate>
+                        <asp:Label ID="label_estado" runat="server" Text='<%# Bind("estado") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="">
                    <ItemTemplate>
                         <asp:Button ID="but_bloquear" runat="server" Text="Bloquear" CssClass="btn btn-danger" CommandName="bloquear" CommandArgument='<%# Bind("id_usuario") %>' />

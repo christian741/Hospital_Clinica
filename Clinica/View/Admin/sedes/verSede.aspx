@@ -70,18 +70,6 @@
 
                         <HeaderStyle CssClass="thead-dark"></HeaderStyle>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Encargado" Visible="false" HeaderStyle-CssClass="thead-dark">
-                        <EditItemTemplate>
-                            <asp:Label ID="label_error_eng" CssClass="alert-danger" runat="server" Text="" Visible="false"></asp:Label>
-
-                            <asp:TextBox ID="txt_eng_sede" runat="server" MaxLength="30" Text='<%# Bind("encargado") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lab_eng_sede" runat="server" Text='<%# Bind("encargado") %>'></asp:Label>
-                        </ItemTemplate>
-
-                        <HeaderStyle CssClass="thead-dark"></HeaderStyle>
-                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Foto" HeaderStyle-CssClass="thead-dark">
                         <EditItemTemplate>
                             <asp:Image ID="Img_ed_sede" runat="server" ImageUrl='<%# Bind("foto") %>' Width="30%" />

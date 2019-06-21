@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class View_Paciente_Default : System.Web.UI.Page
+public partial class View_Farmaceuta_Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -24,7 +24,7 @@ public partial class View_Paciente_Default : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("~/View/Paciente/editarUsuario.aspx");
+            Response.Redirect("~/View/Farmaceuta/editarUsuario.aspx");
 
         }
 

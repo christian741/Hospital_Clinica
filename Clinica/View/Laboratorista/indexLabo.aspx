@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Laboratorista/masterLabo.master" AutoEventWireup="true" CodeFile="indexLabo.aspx.cs" Inherits="View_Laboratorista_Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Laboratorista/masterLabo.master"
+    AutoEventWireup="true" CodeFile="~/Controller/ConLaboratorista/indexLabo.aspx.cs" Inherits="View_Laboratorista_Default2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 

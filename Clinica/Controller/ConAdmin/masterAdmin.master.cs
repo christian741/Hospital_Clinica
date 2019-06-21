@@ -10,12 +10,23 @@ public partial class View_Admin_masterAdmin : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["usuario"] == null || !Session["rol"].ToString().Equals("5"))
+        try
         {
-            Response.Redirect("../../Principal/index.aspx");
+            if (Session["usuario"] == null || !Session["rol"].ToString().Equals("5"))
+            {
+                Response.Redirect("~/View/Principal/index.aspx");
+            }
+            DataTable foto = new DAOUser().ver_User(Convert.ToInt64(Session["usuario"].ToString()));
+            image_user.ImageUrl = foto.Rows[0]["foto"].ToString();
         }
-        DataTable foto = new DAOUser().ver_User(Convert.ToInt64(Session["usuario"].ToString()));
-        image_user.ImageUrl = foto.Rows[0]["foto"].ToString();
+        catch (Exception ex)
+        {
+            if (ex.Equals(ex))
+            {
+                Response.Redirect("~/View/Principal/index.aspx");
+            }
+
+        } 
         
     }
     protected void but_cerrar_Click(object sender, EventArgs e)
@@ -26,6 +37,7 @@ public partial class View_Admin_masterAdmin : System.Web.UI.MasterPage
         Session["usuario"] = null;
         Session["sede"] = null;
         Session["rol"] = null;
-        Response.Redirect("../../Principal/index.aspx");
+
+        Response.Redirect("~/View/Principal/index.aspx");
     }
 }

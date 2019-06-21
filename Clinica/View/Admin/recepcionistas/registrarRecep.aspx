@@ -16,6 +16,7 @@
 
     <asp:Label ID="label_cedula" runat="server" Text="Cedula:"></asp:Label>
     <asp:TextBox ID="text_cedula" runat="server" MaxLength="10" placeholder="Digite una Cedula:"></asp:TextBox>
+    
     <asp:Label ID="label_primer_nombre" runat="server" Text="Primer Nombre:"></asp:Label>
     <asp:TextBox ID="text_primer_nombre" runat="server" MaxLength="20" placeholder="Digite su Primer Nombre"></asp:TextBox>
      

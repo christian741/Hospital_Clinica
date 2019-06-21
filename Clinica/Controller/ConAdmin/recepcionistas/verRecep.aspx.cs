@@ -32,17 +32,7 @@ public partial class View_Admin_Default3 : System.Web.UI.Page
                 btn1.Visible = false;
                 btn2.Visible = true;
             }
-            String sede = ((Label)e.Row.FindControl("label_sede")).Text;
-
-            DataTable tabla = new DAOSede().ver_Sedes();
-            for (int i = 0; i < tabla.Rows.Count; i++)
-            {
-                if (sede.Equals(tabla.Rows[i]["id_sede"].ToString()))
-                {
-                    Label lbl_sede = ((Label)e.Row.FindControl("label_sede"));
-                    lbl_sede.Text = tabla.Rows[i]["nombre"].ToString();
-                }
-            }
+           
         }
     }
     
